@@ -59,6 +59,10 @@ public class DateUtils {
         return !isAM(date);
     }
     
+    public static String getDayOfWeekString(Date date) {
+        return new LocalDate(date).dayOfWeek().getAsText();
+    }
+    
     public static Date addYears(Date date, int years) {
         return new LocalDateTime(date).plusYears(years).toDate();
     }

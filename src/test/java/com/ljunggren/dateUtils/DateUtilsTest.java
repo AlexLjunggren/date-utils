@@ -83,6 +83,13 @@ public class DateUtilsTest {
     }
     
     @Test
+    public void getDayOfWeekStringTest() throws ParseException {
+        Date date = DateUtils.toDate("2021-12-01", "yyyy-MM-dd");
+        String day = DateUtils.getDayOfWeekString(date);
+        assertEquals("Wednesday", day);
+    }
+    
+    @Test
     public void addYearsTest() throws ParseException {
         Date date = DateUtils.toDate("2021-12-01", "yyyy-MM-dd");
         Date updated = DateUtils.addYears(date, -2);
