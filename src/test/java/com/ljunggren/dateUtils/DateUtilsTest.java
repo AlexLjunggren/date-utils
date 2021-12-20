@@ -147,4 +147,77 @@ public class DateUtilsTest {
         assertEquals(0, DateUtils.getSecond(truncated));
     }
     
+    @Test
+    public void yearsBetweenTest() throws ParseException {
+        Date startDate = DateUtils.toDate("2021-12-01 13:45:30", "yyyy-MM-dd HH:mm:ss");
+        Date endDate = DateUtils.toDate("2024-12-14 18:00:00", "yyyy-MM-dd HH:mm:ss");
+        int years = DateUtils.yearsBetween(startDate, endDate);
+        assertEquals(3, years);
+    }
+    
+    @Test
+    public void monthsBetweenTest() throws ParseException {
+        Date startDate = DateUtils.toDate("2021-12-01 13:45:30", "yyyy-MM-dd HH:mm:ss");
+        Date endDate = DateUtils.toDate("2022-02-14 18:00:00", "yyyy-MM-dd HH:mm:ss");
+        int months = DateUtils.monthsBetween(startDate, endDate);
+        assertEquals(2, months);
+    }
+    
+    @Test
+    public void weeksBetweenTest() throws ParseException {
+        Date startDate = DateUtils.toDate("2021-12-01 13:45:30", "yyyy-MM-dd HH:mm:ss");
+        Date endDate = DateUtils.toDate("2022-02-14 18:00:00", "yyyy-MM-dd HH:mm:ss");
+        int weeks = DateUtils.weeksBetween(startDate, endDate);
+        assertEquals(10, weeks);
+    }
+    
+    @Test
+    public void daysBetweenTest() throws ParseException {
+        Date startDate = DateUtils.toDate("2021-12-01 13:45:30", "yyyy-MM-dd HH:mm:ss");
+        Date endDate = DateUtils.toDate("2021-12-25 18:00:00", "yyyy-MM-dd HH:mm:ss");
+        int days = DateUtils.daysBetween(startDate, endDate);
+        assertEquals(24, days);
+    }
+    
+    @Test
+    public void hoursBetweenTest() throws ParseException {
+        Date startDate = DateUtils.toDate("2021-12-01 13:45:30", "yyyy-MM-dd HH:mm:ss");
+        Date endDate = DateUtils.toDate("2021-12-02 18:00:00", "yyyy-MM-dd HH:mm:ss");
+        int hours = DateUtils.hoursBetween(startDate, endDate);
+        assertEquals(28, hours);
+    }
+    
+    @Test
+    public void minutesBetweenTest() throws ParseException {
+        Date startDate = DateUtils.toDate("2021-12-01 13:45:30", "yyyy-MM-dd HH:mm:ss");
+        Date endDate = DateUtils.toDate("2021-12-01 15:00:00", "yyyy-MM-dd HH:mm:ss");
+        int minutes = DateUtils.hoursBetween(startDate, endDate);
+        assertEquals(1, minutes);
+    }
+    
+    @Test
+    public void secondsBetweenTest() throws ParseException {
+        Date startDate = DateUtils.toDate("2021-12-01 13:45:30", "yyyy-MM-dd HH:mm:ss");
+        Date endDate = DateUtils.toDate("2021-12-01 13:47:00", "yyyy-MM-dd HH:mm:ss");
+        int seconds = DateUtils.secondsBetween(startDate, endDate);
+        assertEquals(90, seconds);
+    }
+    
+    @Test
+    public void isLeapYearTest() throws ParseException {
+        Date date = DateUtils.toDate("2020-01-01", "yyyy-MM-dd");
+        assertTrue(DateUtils.isLeapYear(date));
+    }
+    
+    @Test
+    public void isLeapYearFalseTest() throws ParseException {
+        Date date = DateUtils.toDate("2021-01-01", "yyyy-MM-dd");
+        assertFalse(DateUtils.isLeapYear(date));
+    }
+    
+    @Test
+    public void isLeapYearNullTest() throws ParseException {
+        assertFalse(DateUtils.isLeapYear(null));
+    }
+    
 }

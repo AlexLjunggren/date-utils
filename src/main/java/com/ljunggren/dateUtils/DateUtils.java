@@ -2,10 +2,18 @@ package com.ljunggren.dateUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Year;
 import java.util.Date;
 
+import org.joda.time.Days;
+import org.joda.time.Hours;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
+import org.joda.time.Minutes;
+import org.joda.time.Months;
+import org.joda.time.Seconds;
+import org.joda.time.Weeks;
+import org.joda.time.Years;
 
 public class DateUtils {
     
@@ -81,6 +89,38 @@ public class DateUtils {
     
     public static Date truncate(Date date) {
         return new LocalDate(date).toDate();
+    }
+    
+    public static int yearsBetween(Date startDate, Date endDate) {
+        return Years.yearsBetween(new LocalDateTime(startDate), new LocalDateTime(endDate)).getYears();
+    }
+    
+    public static int monthsBetween(Date startDate, Date endDate) {
+        return Months.monthsBetween(new LocalDateTime(startDate), new LocalDateTime(endDate)).getMonths();
+    }
+    
+    public static int weeksBetween(Date startDate, Date endDate) {
+        return Weeks.weeksBetween(new LocalDateTime(startDate), new LocalDateTime(endDate)).getWeeks();
+    }
+    
+    public static int daysBetween(Date startDate, Date endDate) {
+        return Days.daysBetween(new LocalDateTime(startDate), new LocalDateTime(endDate)).getDays();
+    }
+    
+    public static int hoursBetween(Date startDate, Date endDate) {
+        return Hours.hoursBetween(new LocalDateTime(startDate), new LocalDateTime(endDate)).getHours();
+    }
+    
+    public static int minutesBetween(Date startDate, Date endDate) {
+        return Minutes.minutesBetween(new LocalDateTime(startDate), new LocalDateTime(endDate)).getMinutes();
+    }
+    
+    public static int secondsBetween(Date startDate, Date endDate) {
+        return Seconds.secondsBetween(new LocalDateTime(startDate), new LocalDateTime(endDate)).getSeconds();
+    }
+    
+    public static boolean isLeapYear(Date date) {
+        return Year.isLeap(getYear(date));
     }
     
 }
