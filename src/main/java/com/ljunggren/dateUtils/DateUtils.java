@@ -43,6 +43,18 @@ public class DateUtils {
         return new LocalDateTime(date).getSecondOfMinute();
     }
     
+    public static boolean isAM(Date date) {
+        return getHour(date) < 12;
+    }
+    
+    public static boolean isPM(Date date) {
+        return !isAM(date);
+    }
+    
+    public static String getMeridiem(Date date) {
+        return isAM(date) ? "AM" : "PM";
+    }
+    
     public static Date addYears(Date date, int years) {
         return new LocalDate(date).plusYears(years).toDate();
     }
