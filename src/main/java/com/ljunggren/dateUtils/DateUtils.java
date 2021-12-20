@@ -79,4 +79,8 @@ public class DateUtils {
         return new LocalDateTime(date).plusSeconds(seconds).toDate();
     }
     
+    public static Date truncate(Date date) {
+        return new LocalDate(date).toDate();
+    }
+    
 }

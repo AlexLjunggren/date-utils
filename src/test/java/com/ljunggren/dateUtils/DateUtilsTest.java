@@ -138,4 +138,13 @@ public class DateUtilsTest {
         assertEquals(15, DateUtils.getSecond(updated));
     }
     
+    @Test
+    public void truncateTest() throws ParseException {
+        Date date = DateUtils.toDate("2021-12-01 13:45:30", "yyyy-MM-dd HH:mm:ss");
+        Date truncated = DateUtils.truncate(date);
+        assertEquals(0, DateUtils.getHour(truncated));
+        assertEquals(0, DateUtils.getMinute(truncated));
+        assertEquals(0, DateUtils.getSecond(truncated));
+    }
+    
 }
