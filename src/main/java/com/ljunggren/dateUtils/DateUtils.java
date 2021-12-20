@@ -20,15 +20,15 @@ public class DateUtils {
     }
     
     public static int getYear(Date date) {
-        return new LocalDate(date).getYear();
+        return new LocalDateTime(date).getYear();
     }
     
     public static int getMonth(Date date) {
-        return new LocalDate(date).getMonthOfYear();
+        return new LocalDateTime(date).getMonthOfYear();
     }
     
     public static int getDay(Date date) {
-        return new LocalDate(date).getDayOfMonth();
+        return new LocalDateTime(date).getDayOfMonth();
     }
     
     public static int getHour(Date date) {
@@ -52,19 +52,19 @@ public class DateUtils {
     }
     
     public static Date addYears(Date date, int years) {
-        return new LocalDate(date).plusYears(years).toDate();
+        return new LocalDateTime(date).plusYears(years).toDate();
     }
 
     public static Date addMonths(Date date, int months) {
-        return new LocalDate(date).plusMonths(months).toDate();
+        return new LocalDateTime(date).plusMonths(months).toDate();
     }
     
     public static Date addWeeks(Date date, int weeks) {
-        return new LocalDate(date).plusWeeks(weeks).toDate();
+        return new LocalDateTime(date).plusWeeks(weeks).toDate();
     }
     
     public static Date addDays(Date date, int days) {
-        return new LocalDate(date).plusDays(days).toDate();
+        return new LocalDateTime(date).plusDays(days).toDate();
     }
     
     public static Date addHours(Date date, int hours) {
