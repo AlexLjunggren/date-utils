@@ -83,20 +83,6 @@ public class DateUtilsTest {
     }
     
     @Test
-    public void getMeridiemAmTest() throws ParseException {
-        Date date = DateUtils.toDate("2021-12-01 01:45:30", "yyyy-MM-dd HH:mm:ss");
-        String meridiem = DateUtils.getMeridiem(date);
-        assertEquals("AM", meridiem);
-    }
-    
-    @Test
-    public void getMeridiemPmTest() throws ParseException {
-        Date date = DateUtils.toDate("2021-12-01 13:45:30", "yyyy-MM-dd HH:mm:ss");
-        String meridiem = DateUtils.getMeridiem(date);
-        assertEquals("PM", meridiem);
-    }
-    
-    @Test
     public void addYearsTest() throws ParseException {
         Date date = DateUtils.toDate("2021-12-01", "yyyy-MM-dd");
         Date updated = DateUtils.addYears(date, -2);

@@ -51,10 +51,6 @@ public class DateUtils {
         return !isAM(date);
     }
     
-    public static String getMeridiem(Date date) {
-        return isAM(date) ? "AM" : "PM";
-    }
-    
     public static Date addYears(Date date, int years) {
         return new LocalDate(date).plusYears(years).toDate();
     }
