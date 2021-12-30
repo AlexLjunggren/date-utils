@@ -198,8 +198,8 @@ public class DateUtilsTest {
     public void minutesBetweenTest() throws ParseException {
         Date startDate = DateUtils.toDate("2021-12-01 13:45:30", "yyyy-MM-dd HH:mm:ss");
         Date endDate = DateUtils.toDate("2021-12-01 15:00:00", "yyyy-MM-dd HH:mm:ss");
-        int minutes = DateUtils.hoursBetween(startDate, endDate);
-        assertEquals(1, minutes);
+        int minutes = DateUtils.minutesBetween(startDate, endDate);
+        assertEquals(74, minutes);
     }
     
     @Test
