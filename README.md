@@ -1,3 +1,3 @@
 ## Date Utils ##
 
-A collection of usefule date utilities.
+A collection of useful date utilities.
