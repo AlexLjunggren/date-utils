@@ -45,8 +45,8 @@ public class DateUtilsTest {
     @Test
     public void getDayTest() throws ParseException {
         Date date = DateUtils.toDate("2021-12-01", "yyyy-MM-dd");
-        int month = DateUtils.getDay(date);
-        assertEquals(1, month);
+        int day = DateUtils.getDay(date);
+        assertEquals(1, day);
     }
     
     @Test
@@ -73,15 +73,15 @@ public class DateUtilsTest {
     @Test
     public void isAMTest() throws ParseException {
         Date date = DateUtils.toDate("2021-12-01 01:45:30", "yyyy-MM-dd HH:mm:ss");
-        boolean isAM = DateUtils.isAM(date);
-        assertTrue(isAM);
+        boolean am = DateUtils.isAM(date);
+        assertTrue(am);
     }
     
     @Test
     public void isPMTest() throws ParseException {
         Date date = DateUtils.toDate("2021-12-01 13:45:30", "yyyy-MM-dd HH:mm:ss");
-        boolean isPM = DateUtils.isPM(date);
-        assertTrue(isPM);
+        boolean pm = DateUtils.isPM(date);
+        assertTrue(pm);
     }
     
     @Test
@@ -160,7 +160,7 @@ public class DateUtilsTest {
     public void yearsBetweenTest() throws ParseException {
         Date startDate = DateUtils.toDate("2021-12-01 13:45:30", "yyyy-MM-dd HH:mm:ss");
         Date endDate = DateUtils.toDate("2024-12-14 18:00:00", "yyyy-MM-dd HH:mm:ss");
-        int years = DateUtils.yearsBetween(startDate, endDate);
+        long years = DateUtils.yearsBetween(startDate, endDate);
         assertEquals(3, years);
     }
     
@@ -168,7 +168,7 @@ public class DateUtilsTest {
     public void monthsBetweenTest() throws ParseException {
         Date startDate = DateUtils.toDate("2021-12-01 13:45:30", "yyyy-MM-dd HH:mm:ss");
         Date endDate = DateUtils.toDate("2022-02-14 18:00:00", "yyyy-MM-dd HH:mm:ss");
-        int months = DateUtils.monthsBetween(startDate, endDate);
+        long months = DateUtils.monthsBetween(startDate, endDate);
         assertEquals(2, months);
     }
     
@@ -176,7 +176,7 @@ public class DateUtilsTest {
     public void weeksBetweenTest() throws ParseException {
         Date startDate = DateUtils.toDate("2021-12-01 13:45:30", "yyyy-MM-dd HH:mm:ss");
         Date endDate = DateUtils.toDate("2022-02-14 18:00:00", "yyyy-MM-dd HH:mm:ss");
-        int weeks = DateUtils.weeksBetween(startDate, endDate);
+        long weeks = DateUtils.weeksBetween(startDate, endDate);
         assertEquals(10, weeks);
     }
     
@@ -184,7 +184,7 @@ public class DateUtilsTest {
     public void daysBetweenTest() throws ParseException {
         Date startDate = DateUtils.toDate("2021-12-01 13:45:30", "yyyy-MM-dd HH:mm:ss");
         Date endDate = DateUtils.toDate("2021-12-25 18:00:00", "yyyy-MM-dd HH:mm:ss");
-        int days = DateUtils.daysBetween(startDate, endDate);
+        long days = DateUtils.daysBetween(startDate, endDate);
         assertEquals(24, days);
     }
     
@@ -192,7 +192,7 @@ public class DateUtilsTest {
     public void hoursBetweenTest() throws ParseException {
         Date startDate = DateUtils.toDate("2021-12-01 13:45:30", "yyyy-MM-dd HH:mm:ss");
         Date endDate = DateUtils.toDate("2021-12-02 18:00:00", "yyyy-MM-dd HH:mm:ss");
-        int hours = DateUtils.hoursBetween(startDate, endDate);
+        long hours = DateUtils.hoursBetween(startDate, endDate);
         assertEquals(28, hours);
     }
     
@@ -200,7 +200,7 @@ public class DateUtilsTest {
     public void minutesBetweenTest() throws ParseException {
         Date startDate = DateUtils.toDate("2021-12-01 13:45:30", "yyyy-MM-dd HH:mm:ss");
         Date endDate = DateUtils.toDate("2021-12-01 15:00:00", "yyyy-MM-dd HH:mm:ss");
-        int minutes = DateUtils.minutesBetween(startDate, endDate);
+        long minutes = DateUtils.minutesBetween(startDate, endDate);
         assertEquals(74, minutes);
     }
     
@@ -208,7 +208,7 @@ public class DateUtilsTest {
     public void secondsBetweenTest() throws ParseException {
         Date startDate = DateUtils.toDate("2021-12-01 13:45:30", "yyyy-MM-dd HH:mm:ss");
         Date endDate = DateUtils.toDate("2021-12-01 13:47:00", "yyyy-MM-dd HH:mm:ss");
-        int seconds = DateUtils.secondsBetween(startDate, endDate);
+        long seconds = DateUtils.secondsBetween(startDate, endDate);
         assertEquals(90, seconds);
     }
     

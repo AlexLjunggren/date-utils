@@ -95,31 +95,31 @@ public class DateUtils {
         return new LocalDate(date).toDate();
     }
     
-    public static int yearsBetween(Date startDate, Date endDate) {
+    public static long yearsBetween(Date startDate, Date endDate) {
         return Years.yearsBetween(new LocalDateTime(startDate), new LocalDateTime(endDate)).getYears();
     }
     
-    public static int monthsBetween(Date startDate, Date endDate) {
+    public static long monthsBetween(Date startDate, Date endDate) {
         return Months.monthsBetween(new LocalDateTime(startDate), new LocalDateTime(endDate)).getMonths();
     }
     
-    public static int weeksBetween(Date startDate, Date endDate) {
+    public static long weeksBetween(Date startDate, Date endDate) {
         return Weeks.weeksBetween(new LocalDateTime(startDate), new LocalDateTime(endDate)).getWeeks();
     }
     
-    public static int daysBetween(Date startDate, Date endDate) {
+    public static long daysBetween(Date startDate, Date endDate) {
         return Days.daysBetween(new LocalDateTime(startDate), new LocalDateTime(endDate)).getDays();
     }
     
-    public static int hoursBetween(Date startDate, Date endDate) {
+    public static long hoursBetween(Date startDate, Date endDate) {
         return Hours.hoursBetween(new LocalDateTime(startDate), new LocalDateTime(endDate)).getHours();
     }
     
-    public static int minutesBetween(Date startDate, Date endDate) {
+    public static long minutesBetween(Date startDate, Date endDate) {
         return Minutes.minutesBetween(new LocalDateTime(startDate), new LocalDateTime(endDate)).getMinutes();
     }
     
-    public static int secondsBetween(Date startDate, Date endDate) {
+    public static long secondsBetween(Date startDate, Date endDate) {
         return Seconds.secondsBetween(new LocalDateTime(startDate), new LocalDateTime(endDate)).getSeconds();
     }
     
