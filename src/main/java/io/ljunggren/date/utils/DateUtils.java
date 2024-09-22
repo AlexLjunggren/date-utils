@@ -1,4 +1,4 @@
-package io.ljunggren.dateUtils;
+package io.ljunggren.date.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

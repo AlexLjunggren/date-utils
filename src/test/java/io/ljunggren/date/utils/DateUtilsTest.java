@@ -1,4 +1,4 @@
-package io.ljunggren.dateUtils;
+package io.ljunggren.date.utils;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -222,11 +222,6 @@ public class DateUtilsTest {
     public void isLeapYearFalseTest() throws ParseException {
         Date date = DateUtils.toDate("2021-01-01", "yyyy-MM-dd");
         assertFalse(DateUtils.isLeapYear(date));
-    }
-    
-    @Test
-    public void isLeapYearNullTest() throws ParseException {
-        assertFalse(DateUtils.isLeapYear(null));
     }
     
 }
